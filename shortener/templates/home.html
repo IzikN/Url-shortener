@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow-lg mx-auto" style="max-width: 500px;">
+    <div class="card-body">
+        <h1 class="card-title text-center mb-4">URL Shortener</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Shorten URL</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow-lg mx-auto" style="max-width: 500px;">
+    <div class="card-body text-center">
+        <h1 class="card-title mb-4">Your Shortened URL</h1>
+        <p class="lead">
+            <a href="/{{ short_url }}" class="text-primary" target="_blank">http://127.0.0.1:8000/{{ short_url }}</a>
+        </p>
+        <button class="btn btn-secondary" onclick="copyToClipboard()">Copy</button>
+    </div>
+</div>
+<script>
+    function copyToClipboard() {
+        navigator.clipboard.writeText("http://127.0.0.1:8000/{{ short_url }}");
+        alert("URL copied to clipboard!");
+    }
+</script>
+{% endblock %}
